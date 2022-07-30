@@ -62,13 +62,19 @@
 
 					<!-- Оформить заказ -->
 					<div id="order-form" class="card-body border-top none">
-						<h5 class="card-title">Оформить заказ</h4>
-						<form>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Ваш номер телефона">
-							</div>
-							<button type="submit" class="btn btn-primary">Заказать</button>
-						</form>
+						<div class="form-wrapper">
+							<h5 class="card-title">Оформить заказ</h4>
+								<form>
+									<textarea data-product-name type="text" name="product-name" class="none"></textarea>
+									<!-- <input data-product-count type="text" name="product-count" class="none"> -->
+									<input data-form-delivery type="text" name="delivery" class="none">
+									<input data-form-price type="text" name="price" class="none">
+									<div class="form-group">
+										<input type="text" class="form-control" name="phone" placeholder="Ваш номер телефона">
+									</div>
+									<button type="submit" class="btn btn-primary">Заказать</button>
+								</form>
+						</div>
 					</div>
 					<!-- // Оформить заказ -->
 
@@ -83,6 +89,8 @@
 	<script src="./js/renderProducts.js"></script>
 	<script src="./js/calcCartPrice.js"></script>
 	<script src="./js/toggleCartStatus.js"></script>
+	<script src="./js/orderForm.js"></script>
+	<script src="./js/ajaxForm.js"></script>
 	<script src="./js/counter.js"></script>
 	<script src="./js/cart.js"></script>
 </body>
