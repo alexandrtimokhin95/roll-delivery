@@ -16,7 +16,7 @@ function orderForm() {
         const productNameEl = item.querySelector('.cart-item__title');
         const productCountEl = item.querySelector('[data-counter]');
 
-        productNames += `<span style="text-transform: uppercase">${productNameEl.innerText}</span> - ${productCountEl.innerText}, `;
+        productNames += `${productNameEl.innerText} - ${productCountEl.innerText}, `;
     });
 
  
@@ -33,5 +33,3 @@ function orderForm() {
     formDelivery.value = deliveryCost.innerText;
     formPrice.value = totalPrice.innerText;
 }
-
-// orderForm();

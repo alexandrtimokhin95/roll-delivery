@@ -4,18 +4,20 @@ require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
 // Переменные, которые отправляет пользователь
-$name = $_POST['name'];
-$email = $_POST['email'];
+$product_name = $_POST['product_name'];
+$price = $_POST['price'];
 $phone = $_POST['phone'];
+$address = $_POST['address'];
 
 
 // Формирование самого письма
-$title = "Сообщение с формы обратной связи";
+$title = "Сообщение с сайта Доставка роллов";
 $body = "
-<h2>Новое письмо</h2>
-<b>Имя:</b> $name<br>
-<b>Почта:</b> $email<br><br>
+<h2>Новый заказ</h2>
+<b>Имя:</b> $product_name <br>
+<b>Почта:</b> $price<br><br>
 <b>Телефон:</b><br>$phone
+<b>Адрес:</b><br>$address
 ";
 
 // Настройки PHPMailer
@@ -29,14 +31,14 @@ try {
 
     // Настройки вашей почты
     $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
-    $mail->Username   = 'zakaz-opt@santehmir.ru'; // Логин на почте
+    $mail->Username   = ''; // Логин на почте
     $mail->Password   = 'dron555'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('zakaz-opt@santehmir.ru'); // Адрес самой почты и имя отправителя
+    $mail->setFrom(''); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('zakaz-opt@santehmir.ru');  
+    $mail->addAddress('');  
 
 
 // Отправка сообщения
