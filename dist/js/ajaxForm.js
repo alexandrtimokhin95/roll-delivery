@@ -11,7 +11,6 @@ function ajaxForm() {
 
     form.addEventListener('submit' , (e) => {
         e.preventDefault();
-        console.log(form);
         const statusMessage = document.createElement('img');
         statusMessage.src = message.loading;
         statusMessage.style.cssText = `
@@ -24,7 +23,7 @@ function ajaxForm() {
         request.open('POST', 'send-order.php');
 
         request.setRequestHeader('Content-type', 'application/json');
-        const formData = new FormData();
+        const formData = new FormData(form);
 
         const object = {};
         formData.forEach(function(value, key) {
